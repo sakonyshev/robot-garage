@@ -16,9 +16,9 @@ This project was inspired by the challenge of limited space in an apartment. Ded
    - Construct a housing that fits under your kitchen cabinets and accommodates your specific robot vacuum.  
    - Dimensions are **not provided**, as different robot models require different clearance and space. Ensure there is enough room for smooth docking and undocking.  
 
-2. **Add the control board**  
-   - You will need a **control board** (e.g., **NodeMCU**) to handle the opening and closing of the garage door.  
-   - The board will control the door mechanism based on signals from the robot (e.g., when it enters the garage).  
+2. **Add the control board**
+   - Prepare **control board** based on **NodeMCU** to handle the opening and closing of the garage door.
+   - The control board will manage the door mechanism and control the motor based on signals, such as when the robot leaves and enters the garage.  
 
 3. **Print and install the door mechanism**  
    - Download and 3D print the **gear assembly** responsible for opening and closing the garage door.  
@@ -27,18 +27,26 @@ This project was inspired by the challenge of limited space in an apartment. Ded
 
 4. **Install the door panel**  
    - Use a **standard chipboard (DSP) panel** as the door.  
-   - Cut it to fit the gap between the **floor and kitchen cabinets**.  
-   - Ensure the panel moves freely with the installed gear mechanism.  
+   - Cut it to fit the gap between the **floor and kitchen cabinets**.
+   - Ensure the panel moves freely with the installed gear mechanism.
+   -  ![lift_mechanism](https://github.com/user-attachments/assets/a8b29e8f-14ab-4984-ab09-4146fb103be0)
 
 5. **Set up the charging station**  
    - Place the charging dock inside the garage.  
-   - Ensure the robot can autonomously navigate into the garage and connect to the charger.  
+   - Ensure the robot can autonomously navigate into the garage and connect to the charger.
+
+6. **Install a force resistor for docking detection**  
+   - Attach a **resistor with variable resistance** to the floor under the robot’s wheel.  
+   - The resistor should change its resistance when pressure is applied (i.e., when the robot returns to the base).  
+   - This will allow the control board to detect when the robot is properly parked and the garage door can be closed.  
+
 
 ## Components  
 - NodeMCU  
 - NEMA17 stepper motor
 - DRV8825 stepper motor driver
 - Optocoupler EL817
+- Force resistor 10kOm
 - Resistors 10kOm and 260Om
 - Linear Voltage Regulator L7805CV
 - MOSFET Transistor IRLZ34N
