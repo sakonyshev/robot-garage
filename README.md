@@ -36,10 +36,18 @@ This project was inspired by the challenge of limited space in an apartment. Ded
 
 ## Components  
 - NodeMCU  
-- NEMA17 stepper motor  
-- [Additional components can be added here...]  
+- NEMA17 stepper motor
+- DRV8825 stepper motor driver
+- Optocoupler EL817
+- Resistors 10kOm and 260Om
+- Linear Voltage Regulator L7805CV
+- MOSFET Transistor IRLZ34N
+- Capacitors 470mF, 0.1mF, 0.33mF
+- Connectors KF301-2P
+- Breakable Pin Headers
+- Dip 3p toggle switch
+- 12V power supply
 
 ## Future Improvements  
 - Enhanced automation for door control  
-- Sensor integration for better docking  
-- Improved compatibility with various robot vacuum models  
+- Sensor integration with home assistants
