@@ -53,9 +53,10 @@ This project was inspired by the challenge of limited space in an apartment. Ded
 - Capacitors 470mF, 0.1mF, 0.33mF
 - Connectors KF301-2P
 - Breakable Pin Headers
-- Dip 3p toggle switch
+- Dip 3p toggle switch (or you may use wire jumpers instead)
 - 12V power supply
 
 ## Future Improvements  
 - Enhanced automation for door control  
 - Sensor integration with home assistants
+- You'll be able to order control board on pcbway soon
