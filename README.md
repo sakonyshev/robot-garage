@@ -3,6 +3,9 @@
 ## Overview  
 This project was inspired by the challenge of limited space in an apartment. Dedicating a full square meter of floor space for a robot vacuum’s parking spot seemed inefficient. Instead, the idea was to create a niche under the kitchen cabinets where the robot could park and charge.  
 
+![Work](https://github.com/user-attachments/assets/077b3547-0a17-4905-9be7-d40b60e705af)
+
+
 ## Features  
 - Designed to fit under kitchen cabinets  
 - Automatic door mechanism to enclose the robot when parked  
