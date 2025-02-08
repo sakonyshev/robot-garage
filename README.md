@@ -12,7 +12,7 @@ This project was inspired by the challenge of limited space in an apartment. Ded
 - Provides a dedicated charging space  
 
 ## Disclaimer  
-⚠ **This is an early-stage, untested prototype.** Any modifications, builds, or implementations based on this project are done **at your own risk**.  
+⚠ **This is an early-stage, untested prototype.** Any modifications, builds, or implementations based on this project are done **at your own risk**. At the moment, the code only handles opening the door and closing it when the robot returns. The logic is as simple as possible, but the board's capabilities can be expanded. There is an additional slot for an extra sensor. The NodeMCU board has built-in Wi-Fi, so you can set up integration with your server or a virtual assistant such as Alice, Siri, etc.
 
 ## Installation & Assembly  
 1. **Build the garage frame**  
@@ -20,7 +20,8 @@ This project was inspired by the challenge of limited space in an apartment. Ded
    - Dimensions are **not provided**, as different robot models require different clearance and space. Ensure there is enough room for smooth docking and undocking.  
 
 2. **Add the control board**
-   - Prepare **control board** based on **NodeMCU** to handle the opening and closing of the garage door.
+   - Prepare **[control board](pcb/board.dip)** based on **NodeMCU** to handle the opening and closing of the garage door. 
+   - ![PCB](https://github.com/user-attachments/assets/7b2377ec-0cb3-4f64-b5c6-f6fde1e6af2a)
    - The control board will manage the door mechanism and control the motor based on signals, such as when the robot leaves and enters the garage.  
 
 3. **Print and install the door mechanism**  
@@ -58,6 +59,16 @@ This project was inspired by the challenge of limited space in an apartment. Ded
 - Breakable Pin Headers
 - Dip 3p toggle switch (or you may use wire jumpers instead)
 - 12V power supply
+
+## Connectors and Power Supply
+The board has several connectors used for connecting peripheral sensors, a motor, and power supply.
+
+- VCC_IN – Power input for the board. I used a 12V power adapter from an old router, but technically, any power supply up to 24V can be used. I recommend checking the datasheets of the components before using a different power source. Also, pay attention to potential heating of electronic components—heat sinks may need to be installed.
+- POWER_SW – A connector for end-stop switch that supplies power to the board when activated.
+- SPARE_SOCKET – Additional socket for connecting peripherals. For more details, refer to the schematic. It includes a control pin, a 3V pin, and ground.
+- START_POS_SW – Output for the limit switch used to calibrate the initial position of the stepper motor.
+- RES_IN – Connector for a resistor that changes its resistance depending on the applied pressure.
+- J4 – Connector for connecting the stepper motor.
 
 ## Future Improvements  
 - Enhanced automation for door control  
