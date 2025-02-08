@@ -32,6 +32,7 @@ This project was inspired by the challenge of limited space in an apartment. Ded
 4. **Install the door panel**  
    - Use a **standard chipboard (DSP) panel** as the door.  
    - Cut it to fit the gap between the **floor and kitchen cabinets**.
+   - To create an opening mechanism, use the smallest and simplest hinges that fit your specific setup. Choose compact hinges that provide smooth movement while maintaining durability.
    - Ensure the panel moves freely with the installed gear mechanism.
    -  ![lift_mechanism](https://github.com/user-attachments/assets/a8b29e8f-14ab-4984-ab09-4146fb103be0)
 
