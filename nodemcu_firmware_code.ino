@@ -11,8 +11,8 @@
 
 #define stepsPerRevolution 1800 * 4
 
-#define speed 120
-#define close_speed 200
+#define default_open_speed 110
+#define default_close_speed 220
 
 void setup() {
   //Power on
@@ -32,7 +32,7 @@ void setup() {
   pinMode(endSwitchStop, INPUT);
 }
 
-void close() {
+void close(int speed) {
   int stop = 1;
 
   stop = digitalRead(endSwitchStop);  
@@ -40,16 +40,16 @@ void close() {
 
   while (stop == 0) {
     digitalWrite(stepPin, HIGH);
-    delayMicroseconds(close_speed);
+    delayMicroseconds(speed);
     digitalWrite(stepPin, LOW);
-    delayMicroseconds(close_speed);
+    delayMicroseconds(speed);
 
     stop = digitalRead(endSwitchStop);
     yield();
   }
 }
 
-void open() {
+void open(int speed) {
   digitalWrite(dirPin, HIGH);
 
   // // Spin the stepper motor 1 revolution slowly:
@@ -75,6 +75,12 @@ void waitRobotToDock(int docked) {
   }
 }
 
+
+void powerOn() {
+  digitalWrite(enableBoardPin, HIGH);
+  digitalWrite(enableDriverPin, LOW);
+}
+
 void powerOff() {
   digitalWrite(enableDriverPin, HIGH);
   digitalWrite(enableBoardPin, LOW);
@@ -82,10 +88,10 @@ void powerOff() {
 }
 
 void loop() {
-  close(); //calibrate servo's start position
-  open(); //open the garage
+  close(85); //calibrate servo's start position
+  open(default_open_speed); //open the garage
 
   waitRobotToDock(6); //waiting a wheel standing on the force resistor
-  close();
+  close(default_close_speed);
   powerOff();
 }
